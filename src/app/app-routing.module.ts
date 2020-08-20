@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { PokedexHomeComponent } from './home/pokedex-home.component';
+import { PokedexListComponent } from './home/pokedex-list.component';
 
-const routes: Routes = [];
+export const ROUTES: Routes = [
+    {
+        path: '', component: PokedexHomeComponent, children: [
+            { path: '', component: PokedexListComponent },
+            { path: 'pokemon', loadChildren: () => import('./+pokemon/pokemon.module').then(m => m.PokemonModule) }
+        ]
+    },
+    { path: '**', redirectTo: '' },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(ROUTES, { useHash: true })],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

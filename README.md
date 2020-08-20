@@ -1,6 +1,10 @@
 # Pokedex
+A simple Pokedex powered by the PokeAPI made with Angular and NgRX.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+
+# Live version
+Deployed on Heroku: https://boiss-pokedex.herokuapp.com/
 
 ## Development server
 

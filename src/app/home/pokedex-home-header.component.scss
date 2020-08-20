@@ -1,0 +1,10 @@
+:host {
+    .pokedex-header__container {
+        display: flex;
+        justify-content: center;
+    }
+    .pokedex-header__logo {
+        cursor: pointer;
+        width: 250px;
+    }
+}

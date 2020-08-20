@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import global styles here */
+@import './styles/typography';
+@import './styles/spinner';
+
+/* Define global rules here */
+html,
+body {
+    height: 100%;
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-image: url('assets/img/main_background.png');
+    color: #575757;
+}

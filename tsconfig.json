@@ -13,5 +13,21 @@
     {
       "path": "./tsconfig.spec.json"
     }
-]
+  ],
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@env/*": [
+        "src/environments/*"
+      ],
+      "@views/*": [
+        "src/app/views/*"
+      ]
+    }
+  }
 }
