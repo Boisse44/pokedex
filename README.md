@@ -1,5 +1,5 @@
 # Pokedex
-A simple Pokedex powered by the PokeAPI made with Angular and NgRX.
+A simple Pokedex powered by the [PokéAPI](https://pokeapi.co/) made with Angular and NgRX.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
@@ -8,7 +8,11 @@ Deployed on Heroku: https://boiss-pokedex.herokuapp.com/
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` or `npm run start:local` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Deployed server
+
+Run `npm run start` to launch the Node server used for the deployed app. Navigate to `http://localhost:8080/`.
 
 ## Code scaffolding
 
