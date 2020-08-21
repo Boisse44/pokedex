@@ -1,10 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import { PokemonEntry } from 'src/app/shared/model/pokedex';
-import { PokemonListItem } from 'src/app/shared/model/pokemon-list-item';
+import { PokemonEntry } from 'src/app/shared/model/api/pokedex';
+import { PokemonListItem } from 'src/app/shared/model/pokedex-list/pokemon-list-item';
 import { loadPokemonsSuccessAction } from './pokedex-list.actions';
 
 export interface PokedexListState {
-    pokemonListItems: PokemonListItem[];
+    readonly pokemonListItems: PokemonListItem[];
 }
 
 export const initialState: PokedexListState = {

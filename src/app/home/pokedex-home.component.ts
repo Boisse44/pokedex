@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { PokemonListItem } from '../shared/model/pokemon-list-item';
+import { PokemonListItem } from '../shared/model/pokedex-list/pokemon-list-item';
 import { getPokemonListItems } from '../store/pokedex-list/pokedex-list.selector';
 
 @Component({

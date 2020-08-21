@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Pokemon } from '../shared/model/pokemon';
+import { Pokemon } from '../shared/model/pokemon/pokemon';
 import { getPokemonByIdAction } from '../store/pokemon/pokemon.actions';
 
 @Injectable()

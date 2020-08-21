@@ -1,7 +1,5 @@
-$red: #e20f07;
-$wht: #fff;
-$gry: #a5a5a5;
-$blk: #000;
+@import './colors.scss';
+
 @keyframes rotateBall {
     0% {
         transform: rotate(0deg);

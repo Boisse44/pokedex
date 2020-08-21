@@ -1,12 +1,13 @@
 import { createReducer, on } from '@ngrx/store';
-import { EvolutionChain } from 'src/app/shared/model/evolution-chain';
-import { PokemonAbility } from 'src/app/shared/model/pokemon-ability';
-import { PokemonType } from 'src/app/shared/model/pokemon-type';
-import { Pokemon, PokemonResource } from '../../shared/model/pokemon';
+import { PokemonRessource } from '../../shared/model/api/pokemon-ressource';
+import { EvolutionChain } from '../../shared/model/pokemon/evolution-chain';
+import { Pokemon } from '../../shared/model/pokemon/pokemon';
+import { PokemonAbility } from '../../shared/model/pokemon/pokemon-ability';
+import { PokemonType } from '../../shared/model/pokemon/pokemon-type';
 import { getPokemonByIdAction, getPokemonSuccessAction } from './pokemon.actions';
 
 export interface CurrentPokemonState {
-    currentPokemon: Pokemon;
+    readonly currentPokemon: Pokemon;
 }
 
 export const initialState: CurrentPokemonState = {
@@ -24,7 +25,7 @@ export function pokemonReducer(state, action) {
     return _pokemonReducer(state, action);
 }
 
-export function convertPokemon(pokemonResource: PokemonResource): Pokemon {
+export function convertPokemon(pokemonResource: PokemonRessource): Pokemon {
     return {
         id: pokemonResource.id,
         name: pokemonResource.name,
@@ -40,14 +41,14 @@ export function convertPokemon(pokemonResource: PokemonResource): Pokemon {
 
 }
 
-export function convertEvolutionChain(pokemonResource: PokemonResource): EvolutionChain[] {
+export function convertEvolutionChain(pokemonResource: PokemonRessource): EvolutionChain[] {
     let evolutionChain: EvolutionChain[] = [];
     let evoData = pokemonResource.evolutionChain.chain;
 
     do {
         evolutionChain.push({
             id: !evoData ? null : evoData.species.url.split('/')[6],
-            species_name: evoData.species.name,
+            name: evoData.species.name,
         });
 
         evoData = evoData.evolves_to[0];
@@ -55,10 +56,10 @@ export function convertEvolutionChain(pokemonResource: PokemonResource): Evoluti
     return evolutionChain;
 }
 
-export function convertTypes(pokemonResource: PokemonResource): PokemonType[] {
+export function convertTypes(pokemonResource: PokemonRessource): PokemonType[] {
     return pokemonResource.types.map(type => type.type.name);
 }
 
-export function convertAbilities(pokemonResource: PokemonResource): PokemonAbility[] {
+export function convertAbilities(pokemonResource: PokemonRessource): PokemonAbility[] {
     return pokemonResource.abilities.map(ability => ({ name: ability.ability.name }));
 }

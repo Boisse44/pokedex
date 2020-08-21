@@ -3,9 +3,9 @@ import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { PokemonListItem } from '../shared/model/pokemon-list-item';
-import { CustomMatPaginator } from '../shared/services/custom-mat-paginator-intl.service';
-import { getPokemonListItems } from '../store/pokedex-list/pokedex-list.selector';
+import { PokemonListItem } from '../../shared/model/pokedex-list/pokemon-list-item';
+import { CustomMatPaginator } from '../../shared/services/custom-mat-paginator-intl.service';
+import { getPokemonListItems } from '../../store/pokedex-list/pokedex-list.selector';
 
 @Component({
     selector: 'pokedex-list',
@@ -18,8 +18,8 @@ import { getPokemonListItems } from '../store/pokedex-list/pokedex-list.selector
                 <div class="pokedex-list__item" *ngFor="let pokemon of displayedItems" (click)="navigateToPokemon(pokemon)">
                     <img class="pokedex-list__item-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png">
                     <div class="pokedex-list__item-detail">
-                        <span class="label-01">#{{ pokemon.id }}</span>
-                        <span class="pokedex-list__item-name title-03">{{ pokemon.name }}</span>
+                        <span class="label-02">#{{ pokemon.id }}</span>
+                        <span class="pokedex-list__item-name title-04">{{ pokemon.name }}</span>
                     </div>
                 </div>
             </div>
