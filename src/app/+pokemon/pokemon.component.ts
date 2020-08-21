@@ -35,7 +35,7 @@ import { getCurrentPokemon } from '../store/pokemon/pokemon.selector';
                             </div>
                         </div>
                         <div class="pokemon__section --column">
-                            <span class="pokemon__specs-title title-03">Base Experience</span>
+                            <span class="pokemon__specs-title title-03">Base Exp.</span>
                             <span class="label-01">{{ pokemon.baseExperience }}</span>
                         </div>
                     </div>
