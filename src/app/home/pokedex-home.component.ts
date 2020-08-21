@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
@@ -7,6 +7,7 @@ import { getPokemonListItems } from '../store/pokedex-list/pokedex-list.selector
 
 @Component({
     selector: 'pokedex-home',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./pokedex-home.component.scss'],
     template: `
         <div class="pokedex-home__container">

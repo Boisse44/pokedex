@@ -1,6 +1,7 @@
 .title-01,
 .title-02,
-.title-03 {
+.title-03,
+.title-05 {
     font-family: 'Press Start 2P', cursive;
 }
 .title-01 {
@@ -31,6 +32,13 @@
     line-height: 1.25;
 }
 
+.title-05 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    line-height: 1.25;
+}
+
 .label-01 {
     font-weight: 600;
     font-size: 1.2rem;
@@ -39,7 +47,7 @@
 }
 
 .label-02 {
-    font-weight: 400;
+    font-weight: 900;
     font-size: 1.6rem;
     letter-spacing: 0;
     line-height: 1.25;

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -10,6 +10,7 @@ import { getPokemonListItems } from '../store/pokedex-list/pokedex-list.selector
 @Component({
     selector: 'pokedex-list',
     styleUrls: ['./pokedex-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [{ provide: MatPaginatorIntl, useValue: CustomMatPaginator() }],
     template: `
         <div class="pokedex-list__container">
@@ -42,12 +43,14 @@ export class PokedexListComponent implements OnInit, OnDestroy {
     constructor(
         private store: Store,
         private router: Router,
+        private changeDetectorRef: ChangeDetectorRef
     ) { }
 
     public ngOnInit(): void {
         this.subscriptions.push(this.store.select(getPokemonListItems).subscribe(items => {
             this.pokemonListItems = items;
             this.getPokemonListItems(0, this.itemsPerPage);
+            this.changeDetectorRef.markForCheck();
         }));
     }
     public ngOnDestroy(): void {

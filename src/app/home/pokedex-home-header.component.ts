@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
     selector: 'pokedex-home-header',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./pokedex-home-header.component.scss'],
     template: `
         <div class="pokedex-header__container">

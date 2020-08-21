@@ -6,7 +6,6 @@ import { PokedexHomeFooterComponent } from './pokedex-home-footer.component';
 import { PokedexHomeHeaderComponent } from './pokedex-home-header.component';
 import { PokedexHomeComponent } from './pokedex-home.component';
 import { PokedexListComponent } from './pokedex-list.component';
-import { PokedexSearchComponent } from './pokedex-search.component';
 
 const ROUTES = [
     { path: '', component: PokedexListComponent },
@@ -26,7 +25,6 @@ const ROUTES = [
         PokedexHomeComponent,
         PokedexHomeHeaderComponent,
         PokedexHomeFooterComponent,
-        PokedexSearchComponent,
         PokedexListComponent
     ],
     providers: [],
