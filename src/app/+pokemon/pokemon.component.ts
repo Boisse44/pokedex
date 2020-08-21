@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -71,16 +71,13 @@ import { getCurrentPokemon } from '../store/pokemon/pokemon.selector';
         </ng-template>
     `,
 })
-export class PokemonComponent implements OnInit {
+export class PokemonComponent {
     public currentPokemon$: Observable<Pokemon> = this.store.select(getCurrentPokemon);
 
     constructor(
         private store: Store,
         private router: Router,
     ) { }
-
-    public ngOnInit(): void {
-    }
 
     public navigateToPokemon(id: number): void {
         this.router.navigate(['/pokemon', id]);
