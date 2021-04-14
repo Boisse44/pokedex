@@ -3,6 +3,9 @@ A simple Pokedex powered by the [PokéAPI](https://pokeapi.co/) made with Angula
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
+![image](https://user-images.githubusercontent.com/5862762/114645426-7917b380-9ca7-11eb-9405-352327f34d52.png)
+
+
 # Live version
 Deployed on Heroku: https://boiss-pokedex.herokuapp.com/
 
