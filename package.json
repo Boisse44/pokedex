@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider; node server.js",
     "start:local": "ng serve",
-    "build": "ng build",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider; ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
